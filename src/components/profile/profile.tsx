@@ -1,4 +1,4 @@
-import  { FC, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 import { Avatar, Box, Typography } from '@mui/material';
 
@@ -13,10 +13,10 @@ export const Profile: FC<IProfile> = (props): ReactElement => {
 
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
+      display='flex'
+      flexDirection='column'
+      justifyContent='center'
+      alignItems='center'
     >
       <Avatar
         sx={{
@@ -26,16 +26,16 @@ export const Profile: FC<IProfile> = (props): ReactElement => {
           marginBottom: '16px',
         }}
       >
-        <Typography variant="h4" color="text.primary">
+        <Typography variant='h4' color='text.primary'>
           {name.substring(0, 1).toUpperCase()}
         </Typography>
       </Avatar>
 
-      <Typography variant="h6" color="text.primary">
+      <Typography variant='h6' color='text.primary'>
         Welcome, {name}
       </Typography>
 
-      <Typography variant="body1" color="text.primary">
+      <Typography variant='body1' color='text.primary'>
         This is your personal tasks manager
       </Typography>
     </Box>

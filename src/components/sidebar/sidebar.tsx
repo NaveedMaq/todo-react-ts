@@ -1,4 +1,4 @@
-import  { FC, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 import { Grid } from '@mui/material';
 import { Profile } from '../profile/profile';
@@ -22,7 +22,7 @@ export const Sidebar: FC = (): ReactElement => {
         alignItems: 'center',
       }}
     >
-      <Profile name="Naveed" />
+      <Profile name='Naveed' />
       <CreateTaskForm />
     </Grid>
   );
