@@ -1,5 +1,6 @@
+import  { FC, ReactElement } from 'react';
+
 import { Avatar, Box, Typography } from '@mui/material';
-import React, { FC, ReactElement } from 'react';
 
 import PropTypes from 'prop-types';
 

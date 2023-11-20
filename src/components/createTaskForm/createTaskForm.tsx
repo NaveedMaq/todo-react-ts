@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import  { FC, ReactElement } from 'react';
 
 import { Box, Typography, Stack } from '@mui/material';
 import { TaskTitleField } from './_taskTitleField';

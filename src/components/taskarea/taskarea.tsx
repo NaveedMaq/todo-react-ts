@@ -1,5 +1,5 @@
+import  { FC, ReactElement } from 'react';
 import { Grid } from '@mui/material';
-import React, { FC, ReactElement } from 'react';
 
 export const TaskArea: FC = (): ReactElement => {
   return (
