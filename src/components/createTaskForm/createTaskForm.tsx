@@ -15,11 +15,13 @@ import { TaskDateField } from './_taskDateField';
 import { TaskSelectField } from './_taskSelectField';
 import { Status } from './enums/Status';
 import { Priority } from './enums/Priority';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { sendApiRequest } from '../../helpers/sendApiRequest';
 import { ICreateTask } from '../taskarea/interfaces/ICreateTask';
 
 export const CreateTaskForm: FC = (): ReactElement => {
+  const queryClient = useQueryClient();
+
   const [title, setTitle] = useState<string | undefined>(undefined);
   const [description, setDescription] = useState<string | undefined>(undefined);
   const [date, setDate] = useState<Date | null>(new Date());
@@ -30,6 +32,10 @@ export const CreateTaskForm: FC = (): ReactElement => {
   const createTaskMutation = useMutation({
     mutationFn: (data: ICreateTask) =>
       sendApiRequest('http://localhost:3200/tasks', 'POST', data),
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['todos'] });
+    },
   });
 
   const { isPending, isSuccess } = createTaskMutation;

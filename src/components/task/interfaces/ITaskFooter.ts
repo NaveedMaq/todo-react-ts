@@ -1,6 +1,14 @@
+import { Status } from '../../createTaskForm/enums/Status';
+
 export interface ITaskFooter {
-  onStatusChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  id: string;
+  status?: Status;
+  onStatusChange?: (e: React.ChangeEvent<HTMLInputElement>, id: string) => void;
+
   onClick?: (
-    e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>
+    e:
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLAnchorElement>,
+    id: string
   ) => void;
 }
