@@ -4,7 +4,11 @@ import { ITextField } from './interfaces/ITextField';
 import PropTypes from 'prop-types';
 
 export const TaskTitleField: FC<ITextField> = (props): ReactElement => {
-  const { onChange = (e) => console.log(e), disabled = false } = props;
+  const {
+    onChange = (e) => console.log(e),
+    disabled = false,
+    value = '',
+  } = props;
 
   return (
     <TextField
@@ -17,6 +21,7 @@ export const TaskTitleField: FC<ITextField> = (props): ReactElement => {
       fullWidth
       disabled={disabled}
       onChange={onChange}
+      value={value}
     />
   );
 };
@@ -24,4 +29,5 @@ export const TaskTitleField: FC<ITextField> = (props): ReactElement => {
 TaskTitleField.propTypes = {
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
+  value: PropTypes.string,
 };
